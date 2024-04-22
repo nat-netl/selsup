@@ -1,25 +1,51 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ParamEditor from './components/ParamEditor/ParamEditor';
+
+const params = [
+  {
+    id: 0,
+    name: "Тип вина",
+    type: "string",
+  },
+  {
+    id: 1,
+    name: "Состав",
+    type: "string",
+  },
+];
+
+const typeWine = {
+  paramValues: [
+    {
+      id: 0,
+      value: "Сладкое",
+    },
+    {
+      id: 1,
+      value: "Cортовое",
+    },
+  ],
+  types: [
+    {
+      id: 0,
+      name: "Белое",
+    },
+    {
+      id: 1,
+      name: "Красное",
+    },
+    {
+      id: 2,
+      name: "Розовое",
+    }
+  ],
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ParamEditor typeWine={typeWine} params={params} />
+    </>
   );
 }
 
